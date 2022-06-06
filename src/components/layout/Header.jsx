@@ -1,5 +1,5 @@
 import Search from "../base/Search";
-import SubMenu from "../temp/SubMenu";
+import SubMenu from "./SubMenu";
 import { Link } from "react-router-dom";
 
 const Header = () => {

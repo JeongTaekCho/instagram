@@ -1,0 +1,14 @@
+.friendStory{
+
+      $borr: 10px;
+
+      width: 470px;
+      padding: 16px;
+      box-sizing: border-box;
+      background-color: #fff;
+      border-radius: $borr;
+      margin: 20px 0 16px;
+      border: 1px solid #ccc;
+      display: flex;
+      gap: 20px;
+}
