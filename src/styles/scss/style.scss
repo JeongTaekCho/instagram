@@ -2,7 +2,9 @@
 @import "./base";
 
 @import "./base/search";
+@import "./base/button";
 @import "./base/friendProfile";
+@import "./base/profileName";
 
 @import "./util/animation";
 @import "./util/helper";
@@ -13,4 +15,5 @@
 @import "./layout/main";
 @import "./layout/friendStory";
 @import "./layout/feed";
+@import "./layout/commentWrite";
 @import "./layout/modal";

@@ -68,6 +68,13 @@ table {
   background-color: #eee;
 }
 
+.threeBtn {
+  padding: 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+}
+
 .friendProfile {
   width: 56px;
   cursor: pointer;
@@ -89,8 +96,55 @@ table {
   text-align: center;
 }
 
+.profileName {
+  width: 410px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.profileName .profileImg {
+  width: 44px;
+  height: 44px;
+  border: 1px solid red;
+  border-radius: 50%;
+}
+
+.profileName .profileInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profileName .profileInfo .pName {
+  font-size: 14px;
+  font-weight: bold;
+  color: #111;
+  cursor: pointer;
+}
+
+.profileName .profileInfo .pInfo {
+  font-size: 12px;
+  font-weight: 300;
+  color: #ddd;
+}
+
 .headerContainer {
   width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
   background-color: #fff;
   border-bottom: 1px solid #ccc;
   padding: 10px 0;
@@ -161,6 +215,9 @@ table {
 
 body {
   background-color: #eee;
+  padding-top: 57px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .mainInner {
@@ -181,4 +238,166 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
+}
+
+.feedBox {
+  width: 470px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.feedBox .feedHead {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px 4px 8px 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.feedBox .feedBody {
+  width: 100%;
+}
+
+.feedBox .feedBody img {
+  width: 100%;
+}
+
+.feedBox .feedFoot .feedBtn {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.feedBox .feedFoot .feedBtn button {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+}
+
+.feedBox .feedFoot .feedLike {
+  padding-left: 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 12px;
+}
+
+.feedBox .feedFoot .feedLike p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.feedBox .feedFoot .feedLike p span {
+  font-weight: bold;
+}
+
+.feedBox .feedFoot .feedCon {
+  padding: 0 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.feedBox .feedFoot .feedCon p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.feedBox .feedFoot .feedCon p span {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.feedBox .feedFoot .feedCon p span:hover {
+  text-decoration: underline;
+}
+
+.feedBox .feedFoot .feedCommentMore {
+  padding: 0 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.feedBox .feedFoot .feedCommentMore p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #aaa;
+}
+
+.feedBox .feedFoot .feedTime {
+  padding: 0 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 12px;
+}
+
+.feedBox .feedFoot .feedTime p {
+  font-size: 12px;
+  font-weight: 400;
+  color: #aaa;
+}
+
+.commentWrite {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 12px;
+  box-sizing: border-box;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 1px solid #ccc;
+}
+
+.commentWrite .emoBtn {
+  padding: 8px 12px 8px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+}
+
+.commentWrite form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.commentWrite form textarea {
+  width: 100%;
+  height: 18px !important;
+  resize: none;
+  border: none;
+  background: none;
+  outline: none;
+  font-weight: 400;
+  color: #111;
+}
+
+.commentWrite form .commentSubmit {
+  font-size: 15px;
+  font-weight: bold;
+  color: #6ebad8;
+  background: none;
+  border: none;
+  cursor: pointer;
 }

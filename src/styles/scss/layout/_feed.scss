@@ -1,0 +1,82 @@
+.feedBox{
+      width: 470px;
+      background-color: #fff;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      .feedHead{
+            display: flex;
+            align-items: center;
+            padding: 8px 4px 8px 12px;
+            box-sizing: border-box;
+      }
+      .feedBody{
+            width: 100%;
+            img{
+                  width: 100%;
+            }
+      }
+      .feedFoot{
+            .feedBtn{
+                  width: 100%;
+                  display: flex;
+                  justify-content: space-between;
+                  button{
+                        background: none;
+                        border: none;
+                        outline: none;
+                        padding: 8px;
+                        box-sizing: border-box;
+                        cursor: pointer;
+                  }
+            }
+            .feedLike{
+                  padding-left: 12px;
+                  box-sizing: border-box;
+                  margin-bottom: 12px;
+                  p{
+                        font-size: 14px;
+                        font-weight: 400;
+                        span{
+                              font-weight: bold;
+                        }
+                  }
+            }
+            .feedCon{
+                  padding: 0 12px;
+                  box-sizing: border-box;
+                  margin-bottom: 10px;
+                  p{
+                        font-size: 14px;
+                        font-weight: 400;
+                        span{
+                              font-weight: bold;
+                              cursor: pointer;
+                              &:hover{
+                                    text-decoration: underline;
+                              }
+                        }
+                  }
+            }
+            .feedCommentMore{
+                  padding: 0 12px;
+                  box-sizing: border-box;
+                  margin-bottom: 10px;
+                  cursor: pointer;
+                  p{
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: #aaa;
+                  }
+            }
+            .feedTime{
+                  padding: 0 12px;
+                  box-sizing: border-box;
+                  margin-bottom: 12px;
+                  p{
+                        font-size: 12px;
+                        font-weight: 400;
+                        color: #aaa;
+                  }
+            }
+      }
+}

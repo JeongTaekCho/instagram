@@ -1,0 +1,28 @@
+.profileName{
+      width: 410px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .profileImg{
+            width: 44px;
+            height: 44px;
+            border: 1px solid red;
+            border-radius: 50%;
+      }
+      .profileInfo{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .pName{
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #111;
+                  cursor: pointer;
+            }
+            .pInfo{
+                  font-size: 12px;
+                  font-weight: 300;
+                  color: #ddd;
+            }
+      }
+}
