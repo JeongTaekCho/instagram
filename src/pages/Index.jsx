@@ -2,6 +2,7 @@ import Header from "../components/layout/Header";
 import FriendStory from "../components/layout/FriendStory";
 import Feed from "../components/layout/Feed";
 import Recommend from "../components/layout/Recommend";
+import Footer from "../components/layout/Footer";
 
 const Index = () => {
 
@@ -15,6 +16,7 @@ const Index = () => {
                         </div>
                         <div className="feedRight">
                               <Recommend />
+                              <Footer />
                         </div>
                   </div>
             </>

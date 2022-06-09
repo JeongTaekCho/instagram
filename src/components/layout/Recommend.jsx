@@ -5,7 +5,9 @@ const Recommend = () =>{
       return(
             <>
                   <div className="changeId">
-                        <ProfileName />
+                        <Link to="/profile">
+                              <ProfileName />
+                        </Link>
                         <button className="changeBtn">전환</button>
                   </div>
                   <div className="recommendTitle">

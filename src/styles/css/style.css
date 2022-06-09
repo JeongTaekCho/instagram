@@ -159,6 +159,18 @@ a {
   color: #ddd;
 }
 
+.myImg {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.myImg img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
 .headerContainer {
   width: 100%;
   position: fixed;
@@ -233,7 +245,7 @@ a {
 }
 
 body {
-  background-color: #eee;
+  background-color: #fafafa;
   padding-top: 57px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -246,7 +258,7 @@ body {
 
 .feedRight {
   width: 320px;
-  position: absolute;
+  position: fixed;
   top: 100px;
   left: 804px;
 }
@@ -494,4 +506,62 @@ body {
 .recommendBox .profileName .profileImg {
   width: 32px;
   height: 32px;
+}
+
+footer {
+  margin-top: 25px;
+}
+
+footer .footerInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+footer .footerInfo li {
+  position: relative;
+}
+
+footer .footerInfo li a {
+  font-size: 12px;
+  font-weight: 600;
+  color: #c7c7c7;
+}
+
+footer .footerInfo li:first-child {
+  padding-right: 10px;
+}
+
+footer .footerInfo li:not(:first-child) {
+  padding: 0 10px 0 3px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+footer .footerInfo li:nth-child(7) {
+  padding-left: 0;
+}
+
+footer .footerInfo li:not(:last-child)::after {
+  display: block;
+  content: "";
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background-color: #c7c7c7;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 0;
+  margin: 0 2px;
+}
+
+footer p {
+  font-size: 13px;
+  font-weight: 600;
+  color: #c7c7c7;
 }

@@ -1,5 +1,5 @@
 body{
-      background-color: #eee;
+      background-color: #fafafa;
       padding-top: 57px;
       box-sizing: border-box;
 }
@@ -9,7 +9,7 @@ body{
 }
 .feedRight{
       width: 320px;
-      position: absolute;
+      position: fixed;
       top: 100px;
       left: 804px;
       .profileName{
