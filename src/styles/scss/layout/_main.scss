@@ -7,3 +7,16 @@ body{
       width: 820px;
       margin: 0 auto;
 }
+.feedRight{
+      width: 320px;
+      position: absolute;
+      top: 100px;
+      left: 804px;
+      .profileName{
+            width: 280px;
+            .profileImg{
+                  width: 56px;
+                  height: 56px;
+            }
+      }
+}

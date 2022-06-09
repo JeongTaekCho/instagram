@@ -2,7 +2,7 @@ import ProfileName from "../base/ProfileName";
 import Button from "../base/Button";
 import CommentWrite from "./CommentWrite";
 
-const feed = () => {
+const Feed = () => {
       return(
             <>
                   <div className="feedBox">
@@ -49,4 +49,4 @@ const feed = () => {
       )
 }
 
-export default feed;
+export default Feed;

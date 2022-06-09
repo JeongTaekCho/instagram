@@ -7,11 +7,20 @@
       box-sizing: border-box;
       background-color: #eee;
       margin-right: 60px;
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
       input{
-            width: 100%;
+            width: 90%;
             height: 100%;
             border: none;
             outline: none;
             background-color: #eee;
+      }
+      .searchIcon{
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
       }
 }

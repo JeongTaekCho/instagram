@@ -1,6 +1,7 @@
 import Header from "../components/layout/Header";
 import FriendStory from "../components/layout/FriendStory";
 import Feed from "../components/layout/Feed";
+import Recommend from "../components/layout/Recommend";
 
 const Index = () => {
 
@@ -8,8 +9,13 @@ const Index = () => {
             <>
                   <Header />
                   <div className="mainInner">
-                        <FriendStory />
-                        <Feed />
+                        <div className="feedLeft">
+                              <FriendStory />
+                              <Feed />
+                        </div>
+                        <div className="feedRight">
+                              <Recommend />
+                        </div>
                   </div>
             </>
       )

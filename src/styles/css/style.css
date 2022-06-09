@@ -48,6 +48,10 @@ table {
   border-spacing: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 .searchBox {
   width: 268px;
   min-width: 125px;
@@ -58,14 +62,29 @@ table {
           box-sizing: border-box;
   background-color: #eee;
   margin-right: 60px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .searchBox input {
-  width: 100%;
+  width: 90%;
   height: 100%;
   border: none;
   outline: none;
   background-color: #eee;
+}
+
+.searchBox .searchIcon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .threeBtn {
@@ -223,6 +242,22 @@ body {
 .mainInner {
   width: 820px;
   margin: 0 auto;
+}
+
+.feedRight {
+  width: 320px;
+  position: absolute;
+  top: 100px;
+  left: 804px;
+}
+
+.feedRight .profileName {
+  width: 280px;
+}
+
+.feedRight .profileName .profileImg {
+  width: 56px;
+  height: 56px;
 }
 
 .friendStory {
@@ -400,4 +435,63 @@ body {
   background: none;
   border: none;
   cursor: pointer;
+}
+
+.changeId {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.changeBtn {
+  width: 40px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #0099f6;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+.recommendTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 15px 0;
+}
+
+.recommendTitle h4 {
+  font-size: 15px;
+  font-weight: 500;
+  color: #828282;
+}
+
+.recommendTitle p {
+  font-size: 12px;
+  font-weight: 500;
+  color: #262626;
+}
+
+.recommendBox .changeId {
+  margin-bottom: 15px;
+}
+
+.recommendBox .changeId .changeBtn {
+  width: 44px;
+}
+
+.recommendBox .profileName {
+  width: 260px;
+}
+
+.recommendBox .profileName .profileImg {
+  width: 32px;
+  height: 32px;
 }

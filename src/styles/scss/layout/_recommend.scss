@@ -1,0 +1,44 @@
+.changeId{
+      display: flex;
+      justify-content: space-between;
+}
+.changeBtn{
+      width: 40px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #0099f6;
+      border: none;
+      outline: none;
+      background: none;
+      cursor: pointer;
+}
+.recommendTitle{
+      display: flex;
+      justify-content: space-between;
+      margin: 15px 0;
+      h4{
+            font-size: 15px;
+            font-weight: 500;
+            color: #828282;
+      }
+      p{
+            font-size: 12px;
+            font-weight: 500;
+            color: #262626;
+      }
+}
+.recommendBox{ 
+      .changeId{
+            margin-bottom: 15px;
+            .changeBtn{
+                  width: 44px;
+            }
+      }
+      .profileName{
+            width: 260px;
+            .profileImg{
+                  width: 32px;
+                  height: 32px;
+            }
+      }
+}
