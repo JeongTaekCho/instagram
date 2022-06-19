@@ -2,11 +2,37 @@ import ProfileName from "../base/ProfileName";
 import { Link } from "react-router-dom";
 
 const Recommend = () =>{
+      const subAccouts = [
+            {
+                  id: 0,
+                  username : "my",
+                  profileImage: "" 
+            },
+      ];
+      const friends = [
+            {
+                  id: 0,
+                  username : "people1",
+                  profileImage: "" 
+            },
+            {
+                  id: 1,
+                  username : "people2",
+                  profileImage: "" 
+            },
+            {
+                  id: 2,
+                  username : "people3",
+                  profileImage: "" 
+            }
+      ]; 
       return(
-            <>
+            <aside>
                   <div className="changeId">
                         <Link to="/profile">
-                              <ProfileName />
+                              {subAccouts.map((account) => {
+                                    return  <ProfileName profile={account} />
+                              })}
                         </Link>
                         <button className="changeBtn">전환</button>
                   </div>
@@ -17,28 +43,17 @@ const Recommend = () =>{
                         </Link>
                   </div>
                   <div className="recommendBox">
-                        <div className="changeId">
-                              <ProfileName />
-                              <button className="changeBtn">팔로우</button>
-                        </div>
-                        <div className="changeId">
-                              <ProfileName />
-                              <button className="changeBtn">팔로우</button>
-                        </div>
-                        <div className="changeId">
-                              <ProfileName />
-                              <button className="changeBtn">팔로우</button>
-                        </div>
-                        <div className="changeId">
-                              <ProfileName />
-                              <button className="changeBtn">팔로우</button>
-                        </div>
-                        <div className="changeId">
-                              <ProfileName />
-                              <button className="changeBtn">팔로우</button>
-                        </div>
+                        {friends.map((friend) => {
+                              return (
+                              <div className="changeId">
+                                    <ProfileName profile={friend}/>
+                                    <button className="changeBtn">팔로우</button>
+                              </div>
+                              )
+                        })}
+                        
                   </div>
-            </>
+            </aside>
       )
 }
 

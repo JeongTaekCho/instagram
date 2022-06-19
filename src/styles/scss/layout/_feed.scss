@@ -8,6 +8,12 @@
             align-items: center;
             padding: 8px 4px 8px 12px;
             box-sizing: border-box;
+            background-color: #fff;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-left: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            border-right: 1px solid #ccc;
       }
       .feedBody{
             width: 100%;
@@ -16,6 +22,9 @@
             }
       }
       .feedFoot{
+            border-left: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            border-right: 1px solid #ccc;
             .feedBtn{
                   width: 100%;
                   display: flex;

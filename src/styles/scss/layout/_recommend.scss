@@ -1,6 +1,12 @@
 .changeId{
       display: flex;
       justify-content: space-between;
+      .profileName{
+            img{
+                  width: 52px;
+                  height: 52px;
+            }
+      }
 }
 .changeBtn{
       width: 40px;
@@ -39,6 +45,10 @@
             .profileImg{
                   width: 32px;
                   height: 32px;
+                  img{
+                        width: 28px;
+                        height: 28px;
+                  }
             }
       }
 }

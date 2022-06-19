@@ -1,10 +1,13 @@
-const ProfileName = () => {
+const ProfileName = (props) => {
+      console.log(props.profile.username);
       return(
             <>
                   <div className="profileName">
-                        <div className="profileImg"></div>
+                        <div className="profileImg">
+                              <img src="/images/sub/noImg.jpeg" alt="" />
+                        </div>
                         <div className="profileInfo">
-                              <p className="pName">프로필 아이디</p>
+                              <p className="pName">{props.profile.username}</p>
                               <p className="pInfo"></p>
                         </div>
                   </div>

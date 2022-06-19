@@ -8,6 +8,16 @@
             height: 44px;
             border: 1px solid red;
             border-radius: 50%;
+            position: relative;
+            img{
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+            }
       }
       .profileInfo{
             display: flex;
