@@ -36,15 +36,37 @@ const Comment = ({onAddFeed, commentOff, profile, selectedFeed}) => {
                         <div className="feedCommentContent">
                               <div className="feedAdminBox">
                                     <div className="feedAdmin">
-                                          <ProfileName profile={profile[0]}/>
-                                          <span></span>
-                                          <button>팔로잉</button>
+                                          <div className="profileImg">
+                                                <img src="/images/sub/noImg.jpeg" alt="" />
+                                          </div>
+                                          <div className="adminName">
+                                                <p className="profileAdminName">프로필이름 <span className="lineCircle"></span> <button>팔로잉</button></p>
+                                                <p className="adminPlace">콰드로파크</p>
+                                          </div>
                                     </div>
                                     <Button />
                               </div>
                               <div className="feedMainContent">
-                                    <ProfileName profile={profile[0]}/>
-                                    <span>#게시글 내용이 들어갑니다. 게시글 내용이 들어갑니다. 게시글 내용이 들어갑니다. 게시글 내용이 들어갑니다. 게시글 내용이 들어갑니다.</span>
+                                    <div className="feedWrite">
+                                          <div className="feedAdmin">
+                                                <div className="profileImg">
+                                                      <img src="/images/sub/noImg.jpeg" alt="" />
+                                                </div>
+                                          </div>
+                                          <p className="feedCon"><span>프로필 이름</span>##게시글 내용이 들어갑니다. 게시글 내용이 들어갑니다. 게시글 내용이 들어갑니다. 게시글 내용이 들어갑니다. 게시글 내용이 들어갑니다.
+                                          <span className="feedTime">10시간</span>
+                                          </p>
+                                    </div>
+                                    <div className="feedWrite feedCommentView">
+                                          <div className="feedAdmin">
+                                                <div className="profileImg">
+                                                      <img src="/images/sub/noImg.jpeg" alt="" />
+                                                </div>
+                                          </div>
+                                          <div className="feedCon"><span>프로필 이름</span>#댓글 내용이 들어갑니다. 댓글 내용이 들어갑니다. 댓글 내용이 들어갑니다
+                                          <span className="feedTime">10시간</span>
+                                          </div>
+                                    </div>
                               </div>
                               <div className="feedInfoContent">
                                     <div className="feedIconList">
