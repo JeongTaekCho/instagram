@@ -31,7 +31,7 @@ const Recommend = () =>{
                   <div className="changeId">
                         <Link to="/profile">
                               {subAccouts.map((account) => {
-                                    return  <ProfileName profile={account} />
+                                    return  <ProfileName profile={account} key={account.id}/>
                               })}
                         </Link>
                         <button className="changeBtn">전환</button>
@@ -45,8 +45,8 @@ const Recommend = () =>{
                   <div className="recommendBox">
                         {friends.map((friend) => {
                               return (
-                              <div className="changeId">
-                                    <ProfileName profile={friend}/>
+                              <div className="changeId" key={friend.id}>
+                                    <ProfileName profile={friend} />
                                     <button className="changeBtn">팔로우</button>
                               </div>
                               )

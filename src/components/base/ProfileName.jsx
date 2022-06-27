@@ -1,5 +1,4 @@
 const ProfileName = (props) => {
-      console.log(props.profile.username);
       return(
             <>
                   <div className="profileName">
