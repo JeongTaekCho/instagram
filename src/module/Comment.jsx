@@ -9,6 +9,86 @@ import CommentWrite from "./CommentWrite";
 import { useState } from "react";
 import { useEffect } from "react";
 
+
+const comments = [
+      {
+            userProfile : null,
+            userName : "땅오",
+            comment : "존맛탱",
+            isLike : false,
+            likeNum : 0,
+            atCreate : "10시간 전",
+            reComment : [
+                  {
+                        userProfile : null,
+                        userName : "땅오",
+                        comment : "댓글이 달렸습니다.",
+                        isLike : false,
+                        likeNum : 0,
+                        atCreate : "10시간 전",
+                  }
+            ]
+      },
+      {
+            userProfile : null,
+            userName : "땅오2",
+            comment : "댓글이 달렸습니다.",
+            isLike : false,
+            likeNum : 0,
+            atCreate : "8시간 전",
+            reComment : [
+                  {
+                        userProfile : null,
+                        userName : "땅오",
+                        comment : "댓글이 달렸습니다.",
+                        isLike : false,
+                        likeNum : 0,
+                        atCreate : "10시간 전",
+                  }
+            ]
+      },
+      {
+            userProfile : null,
+            userName : "땅오3",
+            comment : "카페미뇽 손님 되게 많음.",
+            isLike : false,
+            likeNum : 0,
+            atCreate : "6시간 전",
+            reComment : [
+                  {
+                        userProfile : null,
+                        userName : "땅오",
+                        comment : "댓글이 달렸습니다.",
+                        isLike : false,
+                        likeNum : 0,
+                        atCreate : "10시간 전",
+                  }
+            ]
+      }
+];
+
+const commentPrev = 
+      {
+            userProfile : null,
+            userName : "댓글테스트",
+            comment : "",
+            isLike : false,
+            likeNum : 0,
+            atCreate : "n시간 전",
+            reComment : [
+                  {
+                        userProfile : null,
+                        userName : "땅오",
+                        comment : "댓글이 달렸습니다.",
+                        isLike : false,
+                        likeNum : 0,
+                        atCreate : "10시간 전",
+                  }
+            ]
+      }
+
+
+
 const Comment = ({onAddFeed, commentOff, profile, selectedFeed}) => {
 
       const [content, setContent] = useState('');
@@ -18,6 +98,17 @@ const Comment = ({onAddFeed, commentOff, profile, selectedFeed}) => {
             setContent(value);
       }
 
+      const [commentValue, setCommentValue] = useState("");
+
+      const getCommentValue = (e) => {
+            setCommentValue(e.target.value);
+      };
+
+      const [viewComment, setViewComment] = useState();
+
+      const wirteComment = () => {
+            
+      }
       // useEffect(() => {
       //       console.log('content >', content);
       // },[content]);
@@ -57,37 +148,49 @@ const Comment = ({onAddFeed, commentOff, profile, selectedFeed}) => {
                                           <span className="feedTime">10시간</span>
                                           </p>
                                     </div>
-                                    <div className="feedWrite feedCommentView">
-                                          <div className="feedAdmin">
-                                                <div className="profileImg">
-                                                      <img src="/images/sub/noImg.jpeg" alt="" />
-                                                </div>
-                                          </div>
-                                          <div className="feedCon"><span>프로필 이름</span>#댓글 내용이 들어갑니다. 댓글 내용이 들어갑니다. 댓글 내용이 들어갑니다
-                                          <div className="feedCommentInfo">
-                                                <span className="feedTime">10시간</span>
-                                                <span className="commentLikeNum">좋아요 : 3개</span>
-                                                <button>답글달기</button>
-                                          </div>
-                                          <div className="recommentShow">
-                                                <button>답글보기</button>
-                                          </div>
-                                          <div className="feedWrite feedCommentView feedReommentView">
+                                    {
+                                          comments.map((comments, index) => {
+                                                return <div className="feedWrite feedCommentView">
                                                 <div className="feedAdmin">
                                                       <div className="profileImg">
                                                             <img src="/images/sub/noImg.jpeg" alt="" />
                                                       </div>
                                                 </div>
-                                                <div className="feedCon"><span>프로필 이름</span>#댓글 내용이 들어갑니다. 댓글 내용이 들어갑니다. 댓글 내용이 들어갑니다
+                                                <div className="feedCon"><span>{comments.userName}</span>{comments.comment}
                                                 <div className="feedCommentInfo">
-                                                      <span className="feedTime">10시간</span>
-                                                      <span className="commentLikeNum">좋아요 : 3개</span>
+                                                      <span className="feedTime">{comments.atCreate}</span>
+                                                      <span className="commentLikeNum">좋아요 : {comments.likeNum}개</span>
                                                       <button>답글달기</button>
                                                 </div>
+                                                <div className="recommentShow">
+                                                      <button>답글보기</button>
+                                                </div>
+                                                {/* {
+                                                      comments.recomment.map((recomment) => {
+                                                            return <div className="feedWrite feedCommentView feedReommentView">
+                                                            <div className="feedAdmin">
+                                                                  <div className="profileImg">
+                                                                        <img src="/images/sub/noImg.jpeg" alt="" />
+                                                                  </div>
+                                                            </div>
+                                                            <div className="feedCon"><span>{recomment.userName}</span>{recomment.comment}
+                                                                  <div className="feedCommentInfo">
+                                                                        <span className="feedTime">{recomment.atCreate}</span>
+                                                                        <span className="commentLikeNum">좋아요 : {recomment.likeNum}개</span>
+                                                                        <button>답글달기</button>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                      })
+                                                } */}
+                                                
+                                                </div>
                                           </div>
-                                    </div>
-                                          </div>
-                                    </div>
+                                          })
+                                    }
+                                    
+                                          
+                                    
                               </div>
                               <div className="feedInfoContent">
                                     <div className="feedIconList">
@@ -106,7 +209,7 @@ const Comment = ({onAddFeed, commentOff, profile, selectedFeed}) => {
                                     <div className="feedDate">
                                           <p>17시간 전</p>
                                     </div>
-                                    <CommentWrite />
+                                    <CommentWrite getCommentValue={getCommentValue} commentValue={commentValue}/>
                                     {/* <textarea name="" id="" cols="30" rows="10" onChange={onHandleContent} value={selectedFeed.content}></textarea>
                                     <button type="button" onClick={() => onAddFeed(content)}>ADD</button> */}
                               </div>
