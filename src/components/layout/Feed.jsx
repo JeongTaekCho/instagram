@@ -9,7 +9,7 @@ import { useState } from "react";
 
 
 
-const Feed = ({commentOn, feedList, onUpdateFeed, onDeleteFeed}) => {
+const Feed = ({commentOn, feedList, onUpdateFeed, onDeleteFeed, onFeedFunction}) => {
 
 
 
@@ -45,8 +45,8 @@ const Feed = ({commentOn, feedList, onUpdateFeed, onDeleteFeed}) => {
                               <div className="feedBox" key={feed.id}>
                               <div className="feedHead">
                                     <ProfileName profile={feed.user}/>
-                                    <Button onClickButton = {() => onUpdateFeed(feed.id)}/>
-                                    <Button onClickButton = {onDeleteFeed}/>
+                                    {/* <Button onClickButton = {() => onUpdateFeed(feed.id)}/> */}
+                                    <Button onFeedFunction = {onFeedFunction}/>
                               </div>   
                               <div className="feedBody">
                                     <img src={"/images/sub/feedBody.jpeg"} />

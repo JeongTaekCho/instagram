@@ -19,6 +19,20 @@
             .feedFunctionBtn{
                   width: 100%;
                   height: 48px;
+                  border: none;
+                  background: none;
+                  outline: none;
+                  cursor: pointer;
+                  &:not(:last-child){
+                        border-bottom: 1px solid #ddd;
+                  }
+                  font-size: 14px;
+                  font-weight: 500;
+                  color: #262626;
+            }
+            .feedFunctionBtnRed{
+                  font-weight: 600;
+                  color: #ED4956;
             }
       }
 }

@@ -93,6 +93,8 @@ const Index = () => {
       const [isShowFeedModal, setIsShowFeedModal] = useState(false); //피드모달 상태관리
       const [commentShow, setCommentShow] = useState(false); //댓글모달 상태관리
 
+      const [isFeedFunctionShow, setIsFeedFunctionShow] = useState(false); //피드기능모달 상태관리
+
 
       const onAddFeedModal = (feedId) => {
 
@@ -123,6 +125,13 @@ const Index = () => {
             setFeedList(newFeedList); // 피드 최신 글 가장 상단으로
             setIsShowFeedModal(false); // 피드 등록 후 모달 닫기
       };
+
+      const onFeedFunction = () => {
+            setIsFeedFunctionShow(true)
+      }
+      const offFeedFunction = () => {
+            setIsFeedFunctionShow(false)
+      }
 
       //상태관리를 통한 모달 on/off
       const commentOn = () => {
@@ -166,7 +175,7 @@ const Index = () => {
                   <div className="mainInner">
                         <div className="feedLeft">
                               <FriendStory />
-                              <Feed commentOn = {commentOn} feedList = {feedList} onUpdateFeed={onAddFeedModal} onDeleteFeed={onDeleteFeed}/>
+                              <Feed commentOn = {commentOn} feedList = {feedList} onUpdateFeed={onAddFeedModal} onDeleteFeed={onDeleteFeed} onFeedFunction={onFeedFunction}/>
                         </div>
                         <div className="feedRight">
                               <Recommend />
@@ -182,8 +191,11 @@ const Index = () => {
                   {/* 게시글 작성 모달 */}
                   {isShowFeedModal === true ? <Comment selectedFeed={selectedFeed} onAddFeed = {onAddFeed} commentOff = {commentOff}  profile = {friends}/> : null}
 
+                  {/* 피드기능 모달 */}
+                  {isFeedFunctionShow === true ? <FeedFunction offFeedFunction={offFeedFunction} /> : null}
+
                
-                  <FeedFunction />
+                  
                   
             </>
       )

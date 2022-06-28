@@ -39,7 +39,7 @@ blockquote, q {
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-  content: '';
+  content: "";
   content: none;
 }
 
@@ -58,19 +58,13 @@ a {
   height: 36px;
   border-radius: 10px;
   padding: 3px 16px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   background-color: #eee;
   margin-right: 60px;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
 }
-
 .searchBox input {
   width: 90%;
   height: 100%;
@@ -78,19 +72,16 @@ a {
   outline: none;
   background-color: #eee;
 }
-
 .searchBox .searchIcon {
   position: absolute;
   top: 50%;
   left: 15px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .threeBtn {
   padding: 8px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   cursor: pointer;
 }
 
@@ -98,7 +89,6 @@ a {
   width: 56px;
   cursor: pointer;
 }
-
 .friendProfile .profileImg {
   width: 100%;
   height: 56px;
@@ -107,7 +97,6 @@ a {
   margin-bottom: 7px;
   position: relative;
 }
-
 .friendProfile .profileImg img {
   width: 52px;
   height: 52px;
@@ -115,29 +104,22 @@ a {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
-
 .friendProfile p {
   font-size: 14px;
   font-weight: 400;
-  color: 000;
-  letter-spacing: -.5;
+  color: 0;
+  letter-spacing: -0.5;
   text-align: center;
 }
 
 .profileName {
   width: 410px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   gap: 10px;
 }
-
 .profileName .profileImg {
   width: 44px;
   height: 44px;
@@ -145,7 +127,6 @@ a {
   border-radius: 50%;
   position: relative;
 }
-
 .profileName .profileImg img {
   width: 40px;
   height: 40px;
@@ -153,30 +134,19 @@ a {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
-
 .profileName .profileInfo {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
-
 .profileName .profileInfo .pName {
   font-size: 14px;
   font-weight: bold;
   color: #111;
   cursor: pointer;
 }
-
 .profileName .profileInfo .pInfo {
   font-size: 12px;
   font-weight: 300;
@@ -188,7 +158,6 @@ a {
   height: 150px;
   border-radius: 50%;
 }
-
 .myImg img {
   width: 100%;
   height: 100%;
@@ -203,7 +172,7 @@ a {
 }
 
 html, body {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 .headerContainer {
@@ -214,68 +183,44 @@ html, body {
   background-color: #fff;
   border-bottom: 1px solid #ccc;
   padding: 10px 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   z-index: 9995;
 }
-
 .headerContainer .header {
   width: 975px;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 .headerContainer .header .logoBox {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 127px;
-          flex: 1 0 127px;
+  flex: 1 0 127px;
 }
-
 .subMenu {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   gap: 22px;
   padding-left: 24px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 .subMenu .profileImg {
   width: 24px;
   height: 24px;
   border-radius: 50%;
 }
-
 .subMenu .profileImg span {
   width: 100%;
   height: 100%;
 }
-
 .subMenu .profileImg span img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
 }
-
 .subMenu svg {
   cursor: pointer;
 }
-
 .subMenu div {
   cursor: pointer;
 }
@@ -283,8 +228,7 @@ html, body {
 body {
   background-color: #fafafa;
   padding-top: 57px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .mainInner {
@@ -298,11 +242,9 @@ body {
   top: 100px;
   left: 57%;
 }
-
 .feedRight .profileName {
   width: 280px;
 }
-
 .feedRight .profileName .profileImg {
   width: 56px;
   height: 56px;
@@ -311,14 +253,11 @@ body {
 .friendStory {
   width: 470px;
   padding: 16px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   background-color: #fff;
   border-radius: 10px;
   margin: 20px 0 16px;
   border: 1px solid #ccc;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 20px;
 }
@@ -329,17 +268,11 @@ body {
   border-radius: 10px;
   margin-bottom: 25px;
 }
-
 .feedBox .feedHead {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding: 8px 4px 8px 12px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   background-color: #fff;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -347,99 +280,74 @@ body {
   border-top: 1px solid #ccc;
   border-right: 1px solid #ccc;
 }
-
 .feedBox .feedBody {
   width: 100%;
 }
-
 .feedBox .feedBody img {
   width: 100%;
 }
-
 .feedBox .feedFoot {
   border-left: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   border-right: 1px solid #ccc;
 }
-
 .feedBox .feedFoot .feedBtn {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .feedBox .feedFoot .feedBtn button {
   background: none;
   border: none;
   outline: none;
   padding: 8px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   cursor: pointer;
 }
-
 .feedBox .feedFoot .feedLike {
   padding-left: 12px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin-bottom: 12px;
 }
-
 .feedBox .feedFoot .feedLike p {
   font-size: 14px;
   font-weight: 400;
 }
-
 .feedBox .feedFoot .feedLike p span {
   font-weight: bold;
 }
-
 .feedBox .feedFoot .feedCon {
   padding: 0 12px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin-bottom: 10px;
 }
-
 .feedBox .feedFoot .feedCon p {
   font-size: 14px;
   font-weight: 400;
 }
-
 .feedBox .feedFoot .feedCon p span {
   font-weight: bold;
   cursor: pointer;
 }
-
 .feedBox .feedFoot .feedCon p span:hover {
   text-decoration: underline;
 }
-
 .feedBox .feedFoot .feedCommentMore {
   padding: 0 12px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin-bottom: 10px;
   cursor: pointer;
 }
-
 .feedBox .feedFoot .feedCommentMore p {
   font-size: 14px;
   font-weight: 400;
   color: #aaa;
 }
-
 .feedBox .feedFoot .feedTime {
   padding: 0 12px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin-bottom: 12px;
 }
-
 .feedBox .feedFoot .feedTime p {
   font-size: 12px;
   font-weight: 400;
@@ -447,36 +355,23 @@ body {
 }
 
 .commentWrite {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  box-sizing: border-box;
   display: flex;
   padding: 0 12px;
   box-sizing: border-box;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   border-top: 1px solid #ccc;
 }
-
 .commentWrite .emoBtn {
   padding: 8px 12px 8px 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   cursor: pointer;
 }
-
 .commentWrite form {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .commentWrite form textarea {
   width: 100%;
   height: 18px !important;
@@ -487,25 +382,19 @@ body {
   font-weight: 400;
   color: #111;
 }
-
 .commentWrite form .commentSubmit {
   font-size: 15px;
   font-weight: bold;
-  color: #6ebad8;
+  color: rgb(110, 186, 216);
   background: none;
   border: none;
   cursor: pointer;
 }
 
 .changeId {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .changeId .profileName img {
   width: 52px;
   height: 52px;
@@ -523,21 +412,15 @@ body {
 }
 
 .recommendTitle {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   margin: 15px 0;
 }
-
 .recommendTitle h4 {
   font-size: 15px;
   font-weight: 500;
   color: #828282;
 }
-
 .recommendTitle p {
   font-size: 12px;
   font-weight: 500;
@@ -547,20 +430,16 @@ body {
 .recommendBox .changeId {
   margin-bottom: 15px;
 }
-
 .recommendBox .changeId .changeBtn {
   width: 50px;
 }
-
 .recommendBox .profileName {
   width: 260px;
 }
-
 .recommendBox .profileName .profileImg {
   width: 32px;
   height: 32px;
 }
-
 .recommendBox .profileName .profileImg img {
   width: 28px;
   height: 28px;
@@ -569,40 +448,29 @@ body {
 footer {
   margin-top: 25px;
 }
-
 footer .footerInfo {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin-bottom: 25px;
 }
-
 footer .footerInfo li {
   position: relative;
 }
-
 footer .footerInfo li a {
   font-size: 12px;
   font-weight: 500;
   color: #c7c7c7;
 }
-
 footer .footerInfo li:first-child {
   padding-right: 10px;
 }
-
 footer .footerInfo li:not(:first-child) {
   padding: 0 10px 0 3px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 footer .footerInfo li:nth-child(7) {
   padding-left: 0;
 }
-
 footer .footerInfo li:not(:last-child)::after {
   display: block;
   content: "";
@@ -612,12 +480,10 @@ footer .footerInfo li:not(:last-child)::after {
   background-color: #c7c7c7;
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   right: 0;
   margin: 0 2px;
 }
-
 footer p {
   font-size: 13px;
   font-weight: 500;
@@ -643,83 +509,53 @@ footer p {
   position: fixed;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   opacity: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .commentContent .feedImageBox {
   width: 55%;
   height: 100%;
 }
-
 .commentContent .feedCommentContent {
   width: 45%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
 }
-
 .commentContent .feedCommentContent .feedAdminBox {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid #ddd;
 }
-
 .commentContent .feedCommentContent .feedMainContent {
   width: 100%;
   height: 60vh;
   padding: 16px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 .commentContent .feedCommentContent .feedMainContent .feedWrite {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
   margin-bottom: 15px;
 }
-
 .commentContent .feedCommentContent .feedMainContent .feedWrite .feedCon {
   font-size: 13px;
   font-weight: 400;
   color: #111;
   padding: 4px 10px 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   line-height: 1.4;
 }
-
 .commentContent .feedCommentContent .feedMainContent .feedWrite .feedCon span {
   font-size: 12px;
   font-weight: 600;
   color: #111;
   padding-right: 5px;
 }
-
 .commentContent .feedCommentContent .feedMainContent .feedWrite .feedCon .feedTime {
   display: block;
   font-size: 12px;
@@ -727,27 +563,19 @@ footer p {
   color: #8e8e8e;
   margin-top: 15px;
 }
-
 .commentContent .feedCommentContent .feedMainContent .feedCommentView .profileImg {
   border: none;
 }
-
 .commentContent .feedCommentContent .feedMainContent .feedCommentView .feedCommentInfo {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  align-items: flex-end;
   gap: 5px;
 }
-
 .commentContent .feedCommentContent .feedMainContent .feedCommentView .feedCommentInfo .commentLikeNum {
   font-size: 12px;
   font-weight: 600;
   color: #8e8e8e;
 }
-
 .commentContent .feedCommentContent .feedMainContent .feedCommentView .feedCommentInfo button {
   border: none;
   background: none;
@@ -758,14 +586,11 @@ footer p {
   padding: 0;
   cursor: pointer;
 }
-
 .commentContent .feedCommentContent .feedMainContent .feedCommentView .recommentShow {
   margin-top: 15px;
   padding-left: 46px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 .commentContent .feedCommentContent .feedMainContent .feedCommentView .recommentShow button {
   border: none;
   background: none;
@@ -776,34 +601,24 @@ footer p {
   padding: 0;
   cursor: pointer;
 }
-
 .commentContent .feedCommentContent .feedMainContent .feedCommentView .feedReommentView {
   margin-top: 15px;
 }
-
 .commentContent .feedCommentContent .feedMainContent .feedAdmin {
   width: auto;
   padding: 0;
 }
-
 .commentContent .feedCommentContent .feedMainContent button {
   font-size: 14px;
   font-weight: 400;
   color: #111;
 }
-
 .commentContent .feedCommentContent .feedInfoContent .feedIconList {
   padding: 4px 8px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  box-sizing: border-box;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .commentContent .feedCommentContent .feedInfoContent .feedIcon {
   padding: 8px;
   border: none;
@@ -811,65 +626,46 @@ footer p {
   outline: none;
   cursor: pointer;
 }
-
 .commentContent .feedCommentContent .feedInfoContent .feedLikeNum {
   padding: 0 16px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin-bottom: 6px;
 }
-
 .commentContent .feedCommentContent .feedInfoContent .feedLikeNum p {
   font-size: 15px;
   font-weight: 600;
   color: #262626;
 }
-
 .commentContent .feedCommentContent .feedInfoContent .feedDate {
   padding: 0 16px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin-bottom: 14px;
 }
-
 .commentContent .feedCommentContent .feedInfoContent .feedDate p {
   font-size: 12px;
   font-weight: 500;
   color: #8e8e8e;
 }
-
 .commentContent .profileName {
   width: auto;
   padding: 14px 4px 14px 16px;
 }
-
 .commentContent .feedAdmin {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   gap: 10px;
   padding: 16px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 .commentContent .feedAdmin .profileAdminName {
   font-size: 12px;
   font-weight: 400;
   color: #111;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   gap: 5px;
 }
-
 .commentContent .feedAdmin .profileAdminName .lineCircle {
   display: block;
   width: 3px;
@@ -877,21 +673,18 @@ footer p {
   background-color: #111;
   border-radius: 50%;
 }
-
 .commentContent .feedAdmin .profileAdminName button {
   font-size: 15px;
   font-weight: 600;
   padding: 0;
   cursor: pointer;
 }
-
 .commentContent .feedAdmin .adminPlace {
   font-size: 12px;
   font-weight: 400;
   color: #8e8e8e;
   margin-top: 3px;
 }
-
 .commentContent .feedAdmin .profileImg {
   width: 36px;
   height: 36px;
@@ -899,7 +692,6 @@ footer p {
   border-radius: 50%;
   position: relative;
 }
-
 .commentContent .feedAdmin .profileImg img {
   width: 32px;
   height: 32px;
@@ -907,10 +699,8 @@ footer p {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
-
 .commentContent .feedAdmin button {
   border: none;
   background: none;
@@ -929,25 +719,31 @@ footer p {
   right: 0;
   bottom: 0;
   z-index: 9998;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 .feedFunctionBack .feedFunction {
   width: 400px;
   height: 340px;
   background-color: #fff;
   border-radius: 20px;
 }
-
 .feedFunctionBack .feedFunction .feedFunctionBtn {
   width: 100%;
   height: 48px;
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #262626;
 }
+.feedFunctionBack .feedFunction .feedFunctionBtn:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+.feedFunctionBack .feedFunction .feedFunctionBtnRed {
+  font-weight: 600;
+  color: #ED4956;
+}/*# sourceMappingURL=style.css.map */
