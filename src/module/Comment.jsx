@@ -64,7 +64,28 @@ const Comment = ({onAddFeed, commentOff, profile, selectedFeed}) => {
                                                 </div>
                                           </div>
                                           <div className="feedCon"><span>프로필 이름</span>#댓글 내용이 들어갑니다. 댓글 내용이 들어갑니다. 댓글 내용이 들어갑니다
-                                          <span className="feedTime">10시간</span>
+                                          <div className="feedCommentInfo">
+                                                <span className="feedTime">10시간</span>
+                                                <span className="commentLikeNum">좋아요 : 3개</span>
+                                                <button>답글달기</button>
+                                          </div>
+                                          <div className="recommentShow">
+                                                <button>답글보기</button>
+                                          </div>
+                                          <div className="feedWrite feedCommentView feedReommentView">
+                                                <div className="feedAdmin">
+                                                      <div className="profileImg">
+                                                            <img src="/images/sub/noImg.jpeg" alt="" />
+                                                      </div>
+                                                </div>
+                                                <div className="feedCon"><span>프로필 이름</span>#댓글 내용이 들어갑니다. 댓글 내용이 들어갑니다. 댓글 내용이 들어갑니다
+                                                <div className="feedCommentInfo">
+                                                      <span className="feedTime">10시간</span>
+                                                      <span className="commentLikeNum">좋아요 : 3개</span>
+                                                      <button>답글달기</button>
+                                                </div>
+                                          </div>
+                                    </div>
                                           </div>
                                     </div>
                               </div>

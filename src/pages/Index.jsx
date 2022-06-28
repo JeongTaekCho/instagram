@@ -5,6 +5,7 @@ import Recommend from "../components/layout/Recommend";
 import Footer from "../components/layout/Footer";
 import Comment from "../module/Comment";
 import { useState } from "react";
+import FeedFunction from "../module/FeedFunction";
 
 const feeds = [
       {
@@ -180,6 +181,9 @@ const Index = () => {
 
                   {/* 게시글 작성 모달 */}
                   {isShowFeedModal === true ? <Comment selectedFeed={selectedFeed} onAddFeed = {onAddFeed} commentOff = {commentOff}  profile = {friends}/> : null}
+
+               
+                  <FeedFunction />
                   
             </>
       )

@@ -72,6 +72,44 @@
                         .profileImg{
                               border: none;
                         }
+                        .feedCommentInfo{
+                              display: flex;
+                              align-items: flex-end;
+                              gap: 5px;
+                              .commentLikeNum{
+                                    font-size: 12px;
+                                    font-weight: 600;
+                                    color: #8e8e8e;
+                              }
+                              button{
+                                    border: none;
+                                    background: none;
+                                    outline: none;
+                                    font-size: 12px;
+                                    font-weight: 600;
+                                    color: #8e8e8e;
+                                    padding: 0;
+                                    cursor: pointer;
+                              }
+                        }
+                        .recommentShow{
+                              margin-top: 15px;
+                              padding-left: 46px;
+                              box-sizing: border-box;
+                              button{
+                                    border: none;
+                                    background: none;
+                                    outline: none;
+                                    font-size: 12px;
+                                    font-weight: 600;
+                                    color: #8e8e8e;
+                                    padding: 0;
+                                    cursor: pointer;
+                              }
+                        }
+                        .feedReommentView{
+                              margin-top: 15px;
+                        }
                   }
                   .feedAdmin{
                         width: auto;
