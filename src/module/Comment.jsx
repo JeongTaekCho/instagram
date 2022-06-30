@@ -104,9 +104,21 @@ const Comment = ({onAddFeed, commentOff, profile, selectedFeed}) => {
             setCommentValue(e.target.value);
       };
 
-      const [viewComment, setViewComment] = useState();
 
-      const wirteComment = () => {
+      const [resultComment, setResultComment] = useState(comments)
+      const [viewComment, setViewComment] = useState(commentPrev);
+
+      const wirteComment = (event) => {
+            event.preventDefault();
+            const newComment = {
+                  ...viewComment,
+                  comment : commentValue
+            }
+            setViewComment(newComment);
+            const newCommentList = [viewComment, ...resultComment]
+            setResultComment(newCommentList)
+            console.log(resultComment)
+            console.log("ss")
             
       }
       // useEffect(() => {
@@ -116,6 +128,9 @@ const Comment = ({onAddFeed, commentOff, profile, selectedFeed}) => {
       // lifecycle(생명주기)
 
       // 1. 렌더링(mount) > 2.상태변화 감지 > 3. 해제
+      useEffect(() => {
+            console.log(commentValue)
+      },[commentValue])
 
 
       return(
@@ -149,7 +164,7 @@ const Comment = ({onAddFeed, commentOff, profile, selectedFeed}) => {
                                           </p>
                                     </div>
                                     {
-                                          comments.map((comments, index) => {
+                                          resultComment.map((comments, index) => {
                                                 return <div className="feedWrite feedCommentView">
                                                 <div className="feedAdmin">
                                                       <div className="profileImg">
@@ -209,7 +224,7 @@ const Comment = ({onAddFeed, commentOff, profile, selectedFeed}) => {
                                     <div className="feedDate">
                                           <p>17시간 전</p>
                                     </div>
-                                    <CommentWrite getCommentValue={getCommentValue} commentValue={commentValue}/>
+                                    <CommentWrite getCommentValue={getCommentValue} commentValue={commentValue} wirteComment={wirteComment}/>
                                     {/* <textarea name="" id="" cols="30" rows="10" onChange={onHandleContent} value={selectedFeed.content}></textarea>
                                     <button type="button" onClick={() => onAddFeed(content)}>ADD</button> */}
                               </div>

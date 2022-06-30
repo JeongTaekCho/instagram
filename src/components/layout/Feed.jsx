@@ -88,8 +88,6 @@ const Feed = ({commentOn, feedList, onUpdateFeed, onDeleteFeed, onFeedFunction})
                         )
                   })}
             </>
-                  
-                  
       )
 }
 

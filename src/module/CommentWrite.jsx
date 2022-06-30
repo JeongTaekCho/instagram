@@ -1,4 +1,4 @@
-const CommentWrite = ({getCommentValue, }) => {
+const CommentWrite = ({getCommentValue, wirteComment}) => {
       return(
             <>
                   <div className="commentWrite">
@@ -7,7 +7,7 @@ const CommentWrite = ({getCommentValue, }) => {
                         </div>
                         <form action="" method="post">
                               <textarea placeholder="댓글달기.." onChange={getCommentValue}/>
-                              <input type="submit" value="게시" className="commentSubmit"/>
+                              <input type="submit" value="게시" className="commentSubmit" onClick={wirteComment}/>
                         </form>
                   </div>
             </>
