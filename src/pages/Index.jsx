@@ -6,6 +6,7 @@ import Footer from "../components/layout/Footer";
 import Comment from "../module/Comment";
 import { useState } from "react";
 import FeedFunction from "../module/FeedFunction";
+import FeedWriteModal from "../module/FeedWriteModal";
 
 const feeds = [
       {
@@ -171,7 +172,7 @@ const Index = () => {
 
       return(
             <>
-                  <Header onAddFeedModal={onAddFeedModal}/>
+                  <Header />
                   <div className="mainInner">
                         <div className="feedLeft">
                               <FriendStory />
@@ -193,7 +194,8 @@ const Index = () => {
 
                   {/* 피드기능 모달 */}
                   {isFeedFunctionShow === true ? <FeedFunction offFeedFunction={offFeedFunction} /> : null}
-
+                  
+                  <FeedWriteModal />
                
                   
                   
