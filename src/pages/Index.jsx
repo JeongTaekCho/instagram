@@ -114,10 +114,35 @@ const Index = () => {
       const [selectedFeed, setSelectedFeed] = useState(initialFeed); //피드수정 상태관리
       const [isShowFeedModal, setIsShowFeedModal] = useState(false); //피드모달 상태관리
       const [commentShow, setCommentShow] = useState(false); //댓글모달 상태관리
-
       const [isFeedFunctionShow, setIsFeedFunctionShow] = useState(false); //피드기능모달 상태관리
+      const [isFeedWriteModalShow, setIsFeedWriteModalShow] = useState(false); //피드생성 모달 on/off 상태관리
 
 
+      //피드 기능 모달 on/off
+      const onFeedFunction = () => {
+            setIsFeedFunctionShow(true)
+      }
+      const offFeedFunction = () => {
+            setIsFeedFunctionShow(false)
+      }
+
+      //댓글 모달 on/off
+      const commentOn = () => {
+            setCommentShow(true);
+      };
+      const commentOff = () => {
+            setCommentShow(false);
+      };
+
+      //피드생성 모달 on/off
+      const onFeedWriteModal = () => {
+            setIsFeedWriteModalShow(true)
+      }
+      const offFeedWriteModal = () => {
+            setIsFeedWriteModalShow(false)
+      }
+
+      //피드 수정 모달 on
       const onAddFeedModal = (feedId) => {
 
             if(feedId === 0 || feedId) {
@@ -130,6 +155,7 @@ const Index = () => {
 
       }; //아이디 값이 존재하는 피드 찾기
 
+      //피드 추가
       const onAddFeed = (content) => {
             const newFeed = {
                   ...initialFeed, //스프레드 문법 피드 기본데이터 복사
@@ -146,32 +172,6 @@ const Index = () => {
             setFeedList(newFeedList); // 피드 최신 글 가장 상단으로
             setIsShowFeedModal(false); // 피드 등록 후 모달 닫기
       };
-
-      const onFeedFunction = () => {
-            setIsFeedFunctionShow(true)
-      }
-      const offFeedFunction = () => {
-            setIsFeedFunctionShow(false)
-      }
-
-      //상태관리를 통한 모달 on/off
-      const commentOn = () => {
-            setCommentShow(true);
-      };
-      const commentOff = () => {
-            setCommentShow(false);
-      };
-
-      //피드생성 모달 on/off 상태관리
-      const [isFeedWriteModalShow, setIsFeedWriteModalShow] = useState(false);
-
-      //피드생성 모달 on/off
-      const onFeedWriteModal = () => {
-            setIsFeedWriteModalShow(true)
-      }
-      const offFeedWriteModal = () => {
-            setIsFeedWriteModalShow(false)
-      }
 
       //피드수정
       const onUpdateFeed = () => {
@@ -209,11 +209,11 @@ const Index = () => {
 
                   {/* 댓글 모달 */}
                   {commentShow === true
-                  ? <Comment commentOff = {commentOff} profile = {friends}/> 
+                  ? <Comment commentOff = {commentOff} profile = {friends} onFeedFunction={onFeedFunction}/> 
                   : null} 
 
-                  {/* 게시글 작성 모달 */}
-                  {isShowFeedModal === true ? <Comment selectedFeed={selectedFeed} onAddFeed = {onAddFeed} commentOff = {commentOff}  profile = {friends}/> : null}
+                  {/* 게시글 작성 모달
+                  {isShowFeedModal === true ? <Comment selectedFeed={selectedFeed} onAddFeed = {onAddFeed} commentOff = {commentOff}  profile = {friends} /> : null} */}
 
                   {/* 피드기능 모달 */}
                   {isFeedFunctionShow === true ? <FeedFunction offFeedFunction={offFeedFunction} /> : null}

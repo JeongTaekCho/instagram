@@ -89,7 +89,7 @@ const commentPrev =
 
 
 
-const Comment = ({onAddFeed, commentOff, profile, selectedFeed}) => {
+const Comment = ({onAddFeed, commentOff, profile, selectedFeed, onFeedFunction}) => {
 
       const [content, setContent] = useState('');
 
@@ -149,7 +149,7 @@ const Comment = ({onAddFeed, commentOff, profile, selectedFeed}) => {
                                                 <p className="adminPlace">콰드로파크</p>
                                           </div>
                                     </div>
-                                    <Button />
+                                    <Button onFeedFunction={onFeedFunction}/>
                               </div>
                               <div className="feedMainContent">
                                     <div className="feedWrite">
