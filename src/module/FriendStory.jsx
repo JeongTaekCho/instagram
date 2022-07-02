@@ -34,8 +34,6 @@ const FriendStory = () => {
             }
       ]; 
 
-      console.log(friends)
-
       return (
             <>
                   <div className="friendStory">

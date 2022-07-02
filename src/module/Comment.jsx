@@ -101,7 +101,8 @@ const Comment = ({onAddFeed, commentOff, profile, selectedFeed}) => {
       const [commentValue, setCommentValue] = useState("");
 
       const getCommentValue = (e) => {
-            setCommentValue(e.target.value);
+            const {value} = e.target
+            setCommentValue(value);
       };
 
 
@@ -117,8 +118,6 @@ const Comment = ({onAddFeed, commentOff, profile, selectedFeed}) => {
             setViewComment(newComment);
             const newCommentList = [viewComment, ...resultComment]
             setResultComment(newCommentList)
-            console.log(resultComment)
-            console.log("ss")
             
       }
       // useEffect(() => {

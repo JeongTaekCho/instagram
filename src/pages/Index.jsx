@@ -4,10 +4,11 @@ import Feed from "../components/layout/Feed";
 import Recommend from "../components/layout/Recommend";
 import Footer from "../components/layout/Footer";
 import Comment from "../module/Comment";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FeedFunction from "../module/FeedFunction";
 import FeedWriteModal from "../module/FeedWriteModal";
 
+//피드 더미데이터
 const feeds = [
       {
             id: 0,
@@ -72,6 +73,7 @@ const feeds = [
       }
 ];
 
+//새로운 피드 생성
 const initialFeed = {
       id: null,
       user: {
@@ -85,6 +87,25 @@ const initialFeed = {
       createAt: null,
       comments: [],
 }
+
+//친구추천 더미데이터
+const friends = [
+      {
+            id: 0,
+            username : "people1",
+            profileImage: "" 
+      },
+      {
+            id: 1,
+            username : "people2",
+            profileImage: "" 
+      },
+      {
+            id: 2,
+            username : "people3",
+            profileImage: "" 
+      }
+]; 
 
 
 const Index = () => {
@@ -110,7 +131,6 @@ const Index = () => {
       }; //아이디 값이 존재하는 피드 찾기
 
       const onAddFeed = (content) => {
-            console.log(content)
             const newFeed = {
                   ...initialFeed, //스프레드 문법 피드 기본데이터 복사
                   id: feedList.length + 1,
@@ -142,37 +162,40 @@ const Index = () => {
             setCommentShow(false);
       };
 
+      //피드생성 모달 on/off 상태관리
+      const [isFeedWriteModalShow, setIsFeedWriteModalShow] = useState(false);
 
+      //피드생성 모달 on/off
+      const onFeedWriteModal = () => {
+            setIsFeedWriteModalShow(true)
+      }
+      const offFeedWriteModal = () => {
+            setIsFeedWriteModalShow(false)
+      }
+
+      //피드수정
       const onUpdateFeed = () => {
             
       }
 
+      //피드삭제
       const onDeleteFeed = () => {
 
       }
 
-      //친구추천 더미데이터
-      const friends = [
-            {
-                  id: 0,
-                  username : "people1",
-                  profileImage: "" 
-            },
-            {
-                  id: 1,
-                  username : "people2",
-                  profileImage: "" 
-            },
-            {
-                  id: 2,
-                  username : "people3",
-                  profileImage: "" 
-            }
-      ]; 
+      //피드 글쓰기 value값
+      const [feedWriteValue, setFeedWriteValue] = useState("");
+      //피드 글쓰기 value값 받아오기
+      const onHandleFeedWrite = (e) => {
+            setFeedWriteValue(e.target.value);
+      }
+      
+
+      
 
       return(
             <>
-                  <Header />
+                  <Header onFeedWriteModal={onFeedWriteModal}/>
                   <div className="mainInner">
                         <div className="feedLeft">
                               <FriendStory />
@@ -195,7 +218,8 @@ const Index = () => {
                   {/* 피드기능 모달 */}
                   {isFeedFunctionShow === true ? <FeedFunction offFeedFunction={offFeedFunction} /> : null}
                   
-                  <FeedWriteModal />
+                  {isFeedWriteModalShow === true ? <FeedWriteModal offFeedWriteModal={offFeedWriteModal} onHandleFeedWrite={onHandleFeedWrite}/> : null}
+                  
                
                   
                   

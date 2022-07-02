@@ -1,10 +1,108 @@
 .feedWriteContainer{
     width: 1058px;
-    height: 760px;
+    height: 540px;
     background-color: #fff;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 20px;
+    .feedWriteTitle{
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        button{
+            border: none;
+            background: none;
+            outline: none;
+            cursor: pointer;
+        }
+        .return{
+            padding: 16px;
+            box-sizing: border-box;
+        }
+        .feedMoreTitle{
+            font-size: 16px;
+            font-weight: 600;
+            color: #262626;
+        }
+        .feedMore{
+            border: none;
+            background: none;
+            padding: 16px;
+            box-sizing: border-box;
+            font-size: 15px;
+            font-weight: 500;
+            color: #0095F6;
+        }
+    }
+    .feedWriteBody{
+        width: 100%;
+        height: 490px;
+        display: flex;
+        box-sizing: border-box;
+        .feedPhoto{
+           width: 60%;
+           height: 100%;
+           background-color: #eee;
+           border-bottom-left-radius: 20px;
+        }
+        .feedWriteCon{
+            width: 40%;
+            height: 100%;
+            border-bottom-right-radius: 20px;
+            .feedMyProfile{
+                width: 90%;
+                height: 60px;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                .feedMyProfileBox{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+                .feedMyProfileImg{
+                    width: 28px;
+                    height: 28px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                    }
+                }
+                .feedMyProfileName{
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: #262626;
+                }
+            }
+            .feedTexxArea{
+                width: 100%;
+                height: 180px;
+                padding-bottom: 16px;
+                box-sizing: border-box;
+                border-bottom: 1px solid #ddd;
+                #feedWrite{
+                    display: block;
+                    width: 90%;
+                    margin: 0 auto;
+                    height: 100%;
+                    border: none;
+                    background: none;
+                    resize: none;
+                    outline: none;
+                    &::placeholder{
+                        font-size: 17px;
+                        font-weight: 500;
+                        color: #aaa;
+                    }
+                }
+            }
+        }
+    }
 }
