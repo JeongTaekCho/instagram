@@ -65,7 +65,7 @@ const feeds = [
                   profileImage: "",
             },
             feedImages: [],
-            content: "asdsadsad",
+            content: "three",
             like: 0,
             isLiked: true,
             createAt: new Date(2022, 7, 31),
@@ -112,34 +112,31 @@ const Index = () => {
 
       const [feedList, setFeedList] = useState(feeds); //피드리스트 상태관리
       const [selectedFeed, setSelectedFeed] = useState(initialFeed); //피드수정 상태관리
-      const [isShowFeedModal, setIsShowFeedModal] = useState(false); //피드모달 상태관리
       const [commentShow, setCommentShow] = useState(false); //댓글모달 상태관리
       const [isFeedFunctionShow, setIsFeedFunctionShow] = useState(false); //피드기능모달 상태관리
       const [isFeedWriteModalShow, setIsFeedWriteModalShow] = useState(false); //피드생성 모달 on/off 상태관리
 
 
       //피드 기능 모달 on/off
-      const onFeedFunction = () => {
-            setIsFeedFunctionShow(true)
-      }
-      const offFeedFunction = () => {
-            setIsFeedFunctionShow(false)
+      const onToggleFeedUtilModal = () => {
+            setIsFeedFunctionShow((state) => !state);
       }
 
       //댓글 모달 on/off
-      const commentOn = () => {
-            setCommentShow(true);
-      };
-      const commentOff = () => {
-            setCommentShow(false);
+      const onToggleCommentModal = () => {
+            setCommentShow((state) => !state);
       };
 
       //피드생성 모달 on/off
-      const onFeedWriteModal = () => {
-            setIsFeedWriteModalShow(true)
+      const onToggleFeedModal = () => {
+            setIsFeedWriteModalShow((state) => !state)
       }
-      const offFeedWriteModal = () => {
-            setIsFeedWriteModalShow(false)
+      
+      const onHandleFeedModal = (feedId) => {
+            // onAddFeedModal(feedId)
+
+            onToggleFeedModal();
+            onToggleFeedUtilModal();
       }
 
       //피드 수정 모달 on
@@ -151,7 +148,6 @@ const Index = () => {
                   setSelectedFeed(selectedItem);
             }
 
-            setIsShowFeedModal(true);
 
       }; //아이디 값이 존재하는 피드 찾기
 
@@ -164,18 +160,39 @@ const Index = () => {
                         username : 'my',
                         profileImage: '',
                   },
-                  content: content,
+                  content,
                   createAt: new Date(),
             } // 피드 기본데이터 복사 후 덮어쓰기
-            const reversedFeed = feedList.reverse(); //
-            const newFeedList = [newFeed, ...reversedFeed];
+            const newFeedList = [...feedList, newFeed];
             setFeedList(newFeedList); // 피드 최신 글 가장 상단으로
-            setIsShowFeedModal(false); // 피드 등록 후 모달 닫기
+            setIsFeedWriteModalShow(false);
       };
 
+      const findSelectedFeed = (feedId) => {
+            onToggleFeedUtilModal();
+            onAddFeedModal(feedId);
+      }
+
       //피드수정
-      const onUpdateFeed = () => {
+      const onUpdateFeed = (content) => {
+            const updatedFeed = {
+                  ...selectedFeed,
+                  content : content
+            };
             
+
+            const updatedFeedList = feedList.map((feed) => {
+                  if(feed.id === selectedFeed.id) {
+                        return updatedFeed;
+                  }else{
+                        return feed;
+                  }
+            })
+            setFeedList(updatedFeedList);
+
+            onToggleFeedModal();
+
+            console.log(updatedFeedList);
       }
 
       //피드삭제
@@ -183,23 +200,18 @@ const Index = () => {
 
       }
 
-      //피드 글쓰기 value값
-      const [feedWriteValue, setFeedWriteValue] = useState("");
-      //피드 글쓰기 value값 받아오기
-      const onHandleFeedWrite = (e) => {
-            setFeedWriteValue(e.target.value);
-      }
-      
+      useEffect(()=> {
+            console.log(selectedFeed);
+      },[selectedFeed])
 
-      
 
       return(
             <>
-                  <Header onFeedWriteModal={onFeedWriteModal}/>
+                  <Header onToggleFeedModal={onToggleFeedModal}/>
                   <div className="mainInner">
                         <div className="feedLeft">
                               <FriendStory />
-                              <Feed commentOn = {commentOn} feedList = {feedList} onUpdateFeed={onAddFeedModal} onDeleteFeed={onDeleteFeed} onFeedFunction={onFeedFunction}/>
+                              <Feed findSelectedFeed={findSelectedFeed} onToggleFeedUtilModal={onToggleFeedUtilModal} feedList={feedList} onDeleteFeed={onDeleteFeed} onToggleCommentModal={onToggleCommentModal}/>
                         </div>
                         <div className="feedRight">
                               <Recommend />
@@ -208,19 +220,16 @@ const Index = () => {
                   </div>
 
                   {/* 댓글 모달 */}
-                  {commentShow === true
-                  ? <Comment commentOff = {commentOff} profile = {friends} onFeedFunction={onFeedFunction}/> 
-                  : null} 
+                  {commentShow && <Comment onToggleCommentModal={onToggleCommentModal} profile={friends} onToggleFeedUtilModal={onToggleFeedUtilModal}/>} 
 
-                  {/* 게시글 작성 모달
-                  {isShowFeedModal === true ? <Comment selectedFeed={selectedFeed} onAddFeed = {onAddFeed} commentOff = {commentOff}  profile = {friends} /> : null} */}
+                  {/* 게시글 작성 모달 */}
+                  {isFeedWriteModalShow && <FeedWriteModal onUpdateFeed={onUpdateFeed} selectedFeed={selectedFeed} onAddFeed={onAddFeed} onToggleFeedModal={onToggleFeedModal}/>}
 
                   {/* 피드기능 모달 */}
-                  {isFeedFunctionShow === true ? <FeedFunction offFeedFunction={offFeedFunction} /> : null}
+                  {isFeedFunctionShow && <FeedFunction onHandleFeedModal={onHandleFeedModal} onToggleFeedUtilModal={onToggleFeedUtilModal} />}
                   
-                  {isFeedWriteModalShow === true ? <FeedWriteModal offFeedWriteModal={offFeedWriteModal} onHandleFeedWrite={onHandleFeedWrite}/> : null}
-                  
-               
+
+
                   
                   
             </>

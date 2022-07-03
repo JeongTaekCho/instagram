@@ -1,19 +1,44 @@
 import Return from "../components/base/svg/Return";
 import Close from "../components/base/Close";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 
-const FeedWriteModal = ({commentOff, offFeedWriteModal, onHandleFeedWrite}) => {
+const FeedWriteModal = ({onToggleFeedModal, onAddFeed, selectedFeed, onUpdateFeed}) => {
+
+      //피드 글쓰기 value값
+    const [feedWriteValue, setFeedWriteValue] = useState("");
+
+    const selectedId = selectedFeed.id === 0 || selectedFeed.id;
+
+    const onSubmitFeed = (e) => {
+        e.preventDefault();
+
+        if(selectedId) {
+            onUpdateFeed(feedWriteValue);
+        }else{
+            onAddFeed(feedWriteValue);
+        }
+    }
+    //피드 글쓰기 value값 받아오기
+    const onHandleFeedWrite = (e) => {
+        setFeedWriteValue(e.target.value);
+    }
+
+    useEffect(() => {
+        if (selectedId){
+            setFeedWriteValue(selectedFeed.content);
+        }
+    },[])
 
 
     return (
-        <div className="feedFunctionBack">
-            <div className="feedWriteContainer">
+        <div className="feedFunctionBack" onClick={onToggleFeedModal}>
+            <form className="feedWriteContainer" onSubmit={onSubmitFeed} onClick={(e) => e.stopPropagation()}>
                 <div className="feedWriteHead">
                     <div className="feedWriteTitle">
                         <button><Return /></button>
                         <h1 className="feedMoreTitle">새 게시물 만들기</h1>
-                        <button className="feedMore">공유하기</button>
+                        <button type="submit" className="feedMore">공유하기</button>
                     </div>
                 </div>
                 <div className="feedWriteBody">
@@ -32,12 +57,12 @@ const FeedWriteModal = ({commentOff, offFeedWriteModal, onHandleFeedWrite}) => {
                             </div>
                         </div>
                         <div className="feedTexxArea">
-                            <textarea name="feedWrite" id="feedWrite" placeholder="문구 입력..." onChange={onHandleFeedWrite} />
+                            <textarea name="feedWrite" id="feedWrite" value={feedWriteValue} placeholder="문구 입력..." onChange={onHandleFeedWrite} />
                         </div>
                     </div>
                 </div>
-            </div>
-            <Close commentOff={offFeedWriteModal}/>
+            </form>
+            <Close onCloseModal={onToggleFeedModal}/>
         </div>
     )
 }

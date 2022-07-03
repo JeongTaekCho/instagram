@@ -9,7 +9,7 @@ import { useState } from "react";
 
 
 
-const Feed = ({commentOn, feedList, onUpdateFeed, onDeleteFeed, onFeedFunction}) => {
+const Feed = ({onToggleFeedModal, feedList, onUpdateFeed, onDeleteFeed, onToggleFeedUtilModal, onToggleCommentModal, findSelectedFeed}) => {
 
 
 
@@ -46,7 +46,7 @@ const Feed = ({commentOn, feedList, onUpdateFeed, onDeleteFeed, onFeedFunction})
                               <div className="feedHead">
                                     <ProfileName profile={feed.user}/>
                                     {/* <Button onClickButton = {() => onUpdateFeed(feed.id)}/> */}
-                                    <Button onFeedFunction = {onFeedFunction}/>
+                                    <Button onToogleUtilModal={() => findSelectedFeed(feed.id)}/>
                               </div>   
                               <div className="feedBody">
                                     <img src={"/images/sub/feedBody.jpeg"} />
@@ -59,7 +59,7 @@ const Feed = ({commentOn, feedList, onUpdateFeed, onDeleteFeed, onFeedFunction})
                                                             feed.isLiked === false ? <NoLike /> :  <Like />
                                                       }
                                                 </button>
-                                                <button onClick={commentOn}>
+                                                <button onClick={onToggleCommentModal}>
                                                      <Comt />
                                                 </button>
                                                 <button>

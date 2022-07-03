@@ -2,7 +2,7 @@ import Search from "../base/Search";
 import SubMenu from "../../module/SubMenu";
 import { Link } from "react-router-dom";
 
-const Header = ({onAddFeedModal, onFeedWriteModal}) => {
+const Header = ({ onToggleFeedModal}) => {
 
       //비구조화할당(구조분해할당)
       //객체 내부의 데이터(키)를 접근과 동시에 변수화 할 수 있음.
@@ -20,7 +20,7 @@ const Header = ({onAddFeedModal, onFeedWriteModal}) => {
                               </Link>
                         </div>
                         <Search />
-                        <SubMenu onAddFeedModal={onAddFeedModal} onFeedWriteModal={onFeedWriteModal}/>
+                        <SubMenu onToggleFeedModal={onToggleFeedModal}/>
                   </header>
             </div>
       </>

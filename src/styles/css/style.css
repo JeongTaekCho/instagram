@@ -477,7 +477,7 @@ body {
           align-items: center;
 }
 
-.commentWrite form textarea {
+.commentWrite form textarea, .commentWrite form input {
   width: 100%;
   height: 18px !important;
   resize: none;
@@ -495,6 +495,7 @@ body {
   background: none;
   border: none;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .changeId {
@@ -943,7 +944,6 @@ footer p {
 
 .feedFunctionBack .feedFunction {
   width: 400px;
-  height: 340px;
   background-color: #fff;
   border-radius: 20px;
 }

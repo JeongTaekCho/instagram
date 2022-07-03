@@ -67,7 +67,7 @@ const comments = [
       }
 ];
 
-const commentPrev = 
+const initialComment = 
       {
             userProfile : null,
             userName : "댓글테스트",
@@ -89,35 +89,29 @@ const commentPrev =
 
 
 
-const Comment = ({onAddFeed, commentOff, profile, selectedFeed, onFeedFunction}) => {
+const Comment = ({onAddFeed, onToggleCommentModal, profile, selectedFeed, onToggleFeedUtilModal}) => {
 
-      const [content, setContent] = useState('');
 
-      const onHandleContent = (e) =>{
-            const {value} = e.target;
-            setContent(value);
-      }
 
       const [commentValue, setCommentValue] = useState("");
 
-      const getCommentValue = (e) => {
+      const onChangeComment = (e) => {
             const {value} = e.target
             setCommentValue(value);
       };
 
 
-      const [resultComment, setResultComment] = useState(comments)
-      const [viewComment, setViewComment] = useState(commentPrev);
+      const [commentList, setCommentList] = useState(comments)
 
-      const wirteComment = (event) => {
+      const submitComment = (event) => {
             event.preventDefault();
             const newComment = {
-                  ...viewComment,
+                  ...initialComment,
                   comment : commentValue
             }
-            setViewComment(newComment);
-            const newCommentList = [viewComment, ...resultComment]
-            setResultComment(newCommentList)
+            const newCommentList = [newComment, ...commentList]
+            setCommentList(newCommentList)
+            setCommentValue("");
             
       }
       // useEffect(() => {
@@ -133,7 +127,7 @@ const Comment = ({onAddFeed, commentOff, profile, selectedFeed, onFeedFunction})
 
 
       return(
-            <div className="backContainer" onClick={commentOff}>
+            <div className="backContainer" onClick={onToggleCommentModal}>
                   <div className="commentContent" onClick={(e) => e.stopPropagation()}>
                         <div className="feedImageBox">
 
@@ -149,7 +143,7 @@ const Comment = ({onAddFeed, commentOff, profile, selectedFeed, onFeedFunction})
                                                 <p className="adminPlace">콰드로파크</p>
                                           </div>
                                     </div>
-                                    <Button onFeedFunction={onFeedFunction}/>
+                                    <Button onToogleUtilModal={onToggleFeedUtilModal}/>
                               </div>
                               <div className="feedMainContent">
                                     <div className="feedWrite">
@@ -163,8 +157,8 @@ const Comment = ({onAddFeed, commentOff, profile, selectedFeed, onFeedFunction})
                                           </p>
                                     </div>
                                     {
-                                          resultComment.map((comments, index) => {
-                                                return <div className="feedWrite feedCommentView">
+                                          commentList.map((comments, index) => {
+                                                return <div className="feedWrite feedCommentView" key={index}>
                                                 <div className="feedAdmin">
                                                       <div className="profileImg">
                                                             <img src="/images/sub/noImg.jpeg" alt="" />
@@ -223,13 +217,11 @@ const Comment = ({onAddFeed, commentOff, profile, selectedFeed, onFeedFunction})
                                     <div className="feedDate">
                                           <p>17시간 전</p>
                                     </div>
-                                    <CommentWrite getCommentValue={getCommentValue} commentValue={commentValue} wirteComment={wirteComment}/>
-                                    {/* <textarea name="" id="" cols="30" rows="10" onChange={onHandleContent} value={selectedFeed.content}></textarea>
-                                    <button type="button" onClick={() => onAddFeed(content)}>ADD</button> */}
+                                    <CommentWrite commentValue={commentValue} onChangeComment={onChangeComment} commentValue={commentValue} submitComment={submitComment}/>
                               </div>
                         </div>
                   </div>
-                  <Close commentOff={commentOff}/>
+                  <Close onCloseModal={onToggleCommentModal}/>
             </div>
       )
 }
